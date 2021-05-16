@@ -18,13 +18,16 @@ async def addorno(client, message):
     if sett == "False":
         return await message.copy(message.chat.id, caption="")
     await message.reply_text(
-        "Do You Need Caption ? 🤔",
+        text=f"""<b>Looks like you haven't configured caption settings yet! Press /captionsettings to set your caption settings!</b>
+
+What do you want to do with the caption of this file? <b>If you want you can set your own caption too!</b>
+Press /help for more details!""",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="Yes ✅", callback_data=f"yes-{msg}"),
-                    InlineKeyboardButton(text="No ❌", callback_data=f"no-{msg}"),
+                    InlineKeyboardButton(text="Keep ✅", callback_data=f"yes-{msg}"),
+                    InlineKeyboardButton(text="Delete ❌", callback_data=f"no-{msg}"),
                 ]
             ]
         ),
