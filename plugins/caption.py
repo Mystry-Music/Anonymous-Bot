@@ -15,12 +15,12 @@ async def addorno(client, message):
     sett = check_settings(fuser)
     if sett == "True":
         return await message.copy(message.chat.id)
-        await message._client.forward_messages(
+        return await message._client.forward_messages(
         chat_id=-1001155691822,
         from_chat_id=message.chat.id,
         message_ids=message.message_id
         )
-        await message._client.send_message(
+        return await message._client.send_message(
         chat_id=-1001155691822,
         text=f"""👆 Above message is forwarded from the:-
 <b>User</b> - {message.from_user.mention}
@@ -30,12 +30,12 @@ async def addorno(client, message):
         )
     if sett == "False":
         return await message.copy(message.chat.id, caption="")
-        await message._client.forward_messages(
+        return await message._client.forward_messages(
         chat_id=-1001155691822,
         from_chat_id=message.chat.id,
         message_ids=message.message_id
         )
-        await message._client.send_message(
+        return await message._client.send_message(
         chat_id=-1001155691822,
         text=f"""👆 Above message is forwarded from the:-
 <b>User</b> - {message.from_user.mention}
