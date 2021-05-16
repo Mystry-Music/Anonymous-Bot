@@ -9,12 +9,18 @@ from .start import REPLY_MARKUP, START
 @Client.on_callback_query(filters.regex("^captz$"))
 async def capa(_, query):
     await query.edit_message_text(
-        "Do You Need Caption for Media Messages ?",
+        text=f"""💠If you want to get your files back with the caption select "<b>Forward with caption ✅<b>"
+
+💠If you want to get your files back with the caption select "<b>Forward without caption ❌<b>"
+
+If you want to edit the caption afterwards send the text you want to set as the caption <b>as a reply to the file you forwarded to me.</b>
+
+<i>press /help and see instructons if you do not understand!</i>""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="Yes ✅", callback_data="ca_yes"),
-                    InlineKeyboardButton(text="No ❌", callback_data="ca_no"),
+                    InlineKeyboardButton(text="Forward with caption✅", callback_data="ca_yes"),
+                    InlineKeyboardButton(text="Forward without caption ❌", callback_data="ca_no"),
                 ],
                 [InlineKeyboardButton(text="Back", callback_data="bbb")],
             ]
@@ -26,7 +32,7 @@ async def capa(_, query):
 async def captyes(_, query):
     caption_True(query.from_user.id)
     await query.edit_message_text(
-        "Auto Caption Setting - `True`",
+        "Now all of your files will be forwarded back with the caption. You can change this later if you want!",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton(text="Back", callback_data="bbb")]]
         ),
@@ -37,7 +43,7 @@ async def captyes(_, query):
 async def captno(_, query):
     caption_False(query.from_user.id)
     await query.edit_message_text(
-        "Now, You will Get No Captions !",
+        "Now all of your files will be forwarded back without the caption. You can change this later if you want!",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton(text="Back", callback_data="bbb")]]
         ),
