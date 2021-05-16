@@ -14,7 +14,7 @@ async def black_user(_, message):
     await message.reply_text(f"Blacklisted {bl} !")
 
 
-@Client.on_message(filters.command("unblack") & filters.user(var.OWNER_ID) & filters.group))
+@Client.on_message(filters.command("unblack") & filters.user(var.OWNER_ID) & filters.group)
 async def unblack_user(_, message):
     try:
         bl = str(message.text.split(" ", maxsplit=1)[1])
