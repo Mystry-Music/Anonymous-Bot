@@ -6,7 +6,7 @@ from database.userchats import add_chat
 from vars import var
 
 START_MSG = f"""
-Hi {message.from_user.mention},
+Hello There,
 
 Just Forward me Some messages or media and I will **Anonymize** that !
 
