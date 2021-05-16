@@ -11,7 +11,7 @@ async def capa(_, query):
     await query.edit_message_text(
         text=f"""💠If you want to get your files back with the caption select "<b>Forward with caption ✅<b>"
 
-💠If you want to get your files back with the caption select "<b>Forward without caption ❌<b>"
+💠If you want to get your files back without the caption select "<b>Forward without caption ❌<b>"
 
 If you want to edit the caption afterwards send the text you want to set as the caption <b>as a reply to the file you forwarded to me.</b>
 
