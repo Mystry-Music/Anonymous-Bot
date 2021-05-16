@@ -4,7 +4,7 @@ from database.blacklist import add_blacklist, get_blacklisted, remove_blacklist
 from vars import var
 
 
-@Client.on_message(filters.command("black") & filters.user(var.OWNER_ID) & filters.group))
+@Client.on_message(filters.command("black") & filters.user(var.OWNER_ID) & filters.group)
 async def black_user(_, message):
     try:
         bl = str(message.text.split(" ", maxsplit=1)[1])
